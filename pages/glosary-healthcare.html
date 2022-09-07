@@ -38,9 +38,8 @@
     for (let i = 0; i < localStorage.length; i++) {
             let span = document.createElement("span");
             let b = document.createElement("b");
-
                 key = localStorage.key(i);
-            let meaning = localStorage.getItem(key)
+            let meaning = localStorage.getItem(key);
 
                 span.className = meaning.substr(-4);
                 b.innerText =  key + ": ";
@@ -64,14 +63,13 @@
 
 
     function print_info() {
-        if (acr.value == "" || acr.value == null || mea.value == "" || mea.value == null) {
-            alert("You have to fill all fields");
-        }else{ 
-            if(ass.checked == true) {            
-                localStorage.setItem(acr.value , mea.value + "asso");
-            }else{
-                localStorage.setItem(acr.value , mea.value + "cert");
-            }
+        if  (acr.value == "" || acr.value == null || mea.value == "" || mea.value == null) 
+            {alert("You have to fill all fields") }
+        else{ 
+            if  (ass.checked == true) 
+                { localStorage.setItem(acr.value , mea.value + "asso") }
+            else
+                { localStorage.setItem(acr.value , mea.value + "cert") }
         }
 
         cont.innerHTML = "";
@@ -80,7 +78,7 @@
             let span = document.createElement("span");
             let b = document.createElement("b");
                 key = localStorage.key(i);
-            let meaning = localStorage.getItem(key)
+            let meaning = localStorage.getItem(key);
 
                 span.className = meaning.substr(-4);
                 b.innerText =  key + ": ";
