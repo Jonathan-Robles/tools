@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+
+<body>
+    <a href="pages\glosary-healthcare.html" target="_blank">Healthcare Glosary</a>
+    <div>
+        <p>My name is Jonathan and I am calling from LSGS. <b> (321) 517 5014</b> <br>
+            I was calling you to discuss an open opportunity that we
+            currently have to support US Customs & border proteccion.        </p>
+
+        <p>Have you heard of LS before?</p>
+        <p>I will give you a quick background we are a military friendly, Orlando based
+            workforce solutions provider.<br>
+            Since to 2015 we have had a humanitarian healthcare contract with US Customs and Border Protection.
+            And currently employee over 1000 healthcare professionals in TX, NM, AZ & CA.
+        </p>
+        <p>What I would like to do is share some details about position such as basic requirements and duties. </p>
+        
+<div class="container">
+    Name <input type="text" id="name_1"> Id: <input type="text" id="id_1">
+</div>
+        <ul>
+            <li>First aid and triage</li>
+            <li>Secundary medical evaluation</li>
+            <li>Conducts medical health screenings (hands, back, abdomen & hair)</li>
+            <li>Mental health assessment </li>
+            <li>low acuity treatment</li>
+        </ul>
+
+        <p>Work requires walking, standing, bending and some lifting (for example to assist patients with wheelchairs) </p>
+       
+        <div class="container">
+            <fieldset id="location_1">
+                <legend>Location</legend>
+                TX <input type="checkbox" value="TX" name="tx">
+                NM <input type="checkbox" value="NM" name="nm">
+                AZ <input type="checkbox" value="AZ" name="az">
+                CA <input type="checkbox" value="CA" name="ca">
+            </fieldset>
+            <fieldset id="license_1">
+                <legend>Act_licenses</legend>
+                EMT <input type="checkbox" value="EMT" name="ent">
+                NREMT <input type="checkbox" value="NREMT" name="nrent">
+                CNA <input type="checkbox" value="CNA" name="cna">
+                CMA <input type="checkbox" value="CMA" name="cma">
+            </fieldset>
+            <fieldset id="certification_1">
+                <legend>Certifications </legend>
+                *BLS <input type="checkbox" value="BLS">
+                CPR <input type="checkbox" value="CPR">
+                ACLS <input type="checkbox" value="ACLS">
+                NRP <input type="checkbox" value="NRP">
+                PALS <input type="checkbox" value="PALS">
+            </fieldset>
+            
+            <fieldset id="association_1">
+                <legend>Associations </legend>
+                AHA <input type="checkbox" value="AHA">
+                ARC <input type="checkbox" value="ARC">
+                ASHI <input type="checkbox" value="ASHI">
+            </fieldset>
+        </div>
+
+        <div class="container">
+            <fieldset id="experience_1">
+                <legend>Last_experience(2) </legend>
+                Urgent Care <input type="checkbox" value="Urgent Care">
+                Family Practice <input type="checkbox" value="Family Practice">
+                ER <input type="checkbox" value="ER">
+                
+            </fieldset>
+    
+            <fieldset id="ages_1">
+                <legend>All_ages_Seen</legend>
+                *Pediatrics <input type="checkbox" value="Pediatrics 0-18">
+                *Geriatrics <input type="checkbox" value="Geriatrics">
+            </fieldset>
+
+            <fieldset id="bilingual_1">
+                <legend>Bilingual </legend>
+                Yes <input type="checkbox" value="YES" name="yes">
+                No <input type="checkbox" value="NO" name="no">
+            </fieldset>
+            <fieldset id="shift_1">
+                <legend>Shift_time </legend>
+                Full <input type="checkbox" value="- Full-time" >
+                Part <input type="checkbox" value="- Part-time" >
+            </fieldset>
+        </div>
+
+   
+        <p>Based on our conversation, I believe you can be a great fit.
+            What I would like to do now is tranfer you to a senior recruiter that can discuss all
+            the specifics of the job we have available. If we get disconnected,
+            its name is... and the phone number ... </p>
+        <p>I also like to confirm your email address is <input type="text" id="name_1"> <br>
+            I am going to send you and email to follow up on our conversation,
+            so you have my contact information as well. </p>
+    </div>
+
+
+    <button onclick="click_it()">click It</button>
+
+    <p>Name: <span id="name_2"></span></p>
+    <p>Salesforce id: <span id="id_2"></span></p>
+    <p>Position: <span id="position_2"></span></p>
+
+    <p>Location Interested In: <span id="location_2"></span> <span id="shift_2"></span> </p>
+    
+    <p>Certifications: <span id="certification_2"></span></p>
+    <p>Association: <span id="association_2"></span></p>
+    <p>License: <span id="license_2"></span></p>
+    
+    <p>Bilingual: <span id="bilingual_2"></span></p>
+
+    <p>Experience: <span id="experience_2"></span></p>
+    <p>Ages Seen: <span id="ages_2"></span></p>
+    
+    <p>Contact best time: <span id="association_2"></span></p>
+    <p>Start Availability: <span id="association_2"></span></p>
+
+
+
+
+</body>
+
+<script>
+
+function index(id_1, id_2){
+    let x = document.getElementById(id_1);
+        x = x.getElementsByTagName("input");
+    var demo = document.getElementById(id_2);
+        demo.innerHTML ="";
+
+    for (let i = 0; i < x.length; i++) {
+        if (x[i].checked == true) {
+            demo.innerHTML += x[i].value + ", ";
+        }
+    }
+}
+
+
+function click_it(){
+    document.getElementById("name_2").innerHTML = document.getElementById("name_1").value;
+    document.getElementById("id_2").innerHTML = document.getElementById("id_1").value;
+    
+    index("license_1", "position_2") // to get position name
+    index("location_1", "location_2")
+    index("shift_1", "shift_2")
+    index("certification_1", "certification_2")
+    index("association_1", "association_2")
+    index("license_1", "license_2")
+    index("bilingual_1", "bilingual_2")
+    index("experience_1", "experience_2")
+    index("ages_1", "ages_2")
+    
+}
+</script>
+<!-- <script src="index.js"></script> -->
+
+</html>

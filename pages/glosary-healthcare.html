@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosary</title>
+    <link rel="stylesheet" href="..\css\healthcare-glosary.css">
+
+</head>
+<body>
+    <div id="header" class="container">
+        <form >
+            <label for="acronym">Acronym</label>
+            <input type="text" id="acronym" name="acronym"> <input type="checkbox" id="association"><br>
+            <label for="meaning">Meaning</label>
+            <input type="text" id="meaning" name="meaning"><br>
+            <input type="button" onclick="print_info()" value="Click Me!">
+        </form>
+        <hr>
+    </div>
+
+    <div id="container" class="container"></div>
+    <div id="container_2" class="container"></div>
+    
+</body>
+<script>
+
+    let acr = document.getElementById("acronym");
+    let mea = document.getElementById("meaning");
+    let cont = document.getElementById("container");
+    let cont_2 = document.getElementById("container_2");
+    let ass = document.getElementById("association");
+    let key = "";
+    
+        cont.innerHTML = "";
+
+    for (let i = 0; i < localStorage.length; i++) {
+            let span = document.createElement("span");
+            let b = document.createElement("b");
+
+                key = localStorage.key(i);
+            let meaning = localStorage.getItem(key)
+
+                span.className = meaning.substr(-4);
+                b.innerText =  key + ": ";
+
+                span.appendChild(b);
+                span.innerHTML += meaning.slice(0,-4);
+
+                if (span.className == "asso" ) {
+                    cont.appendChild(span);
+                    cont.innerHTML += "<br>";
+                }else{
+                    cont_2.appendChild(span);
+                    cont_2.innerHTML += "<br>";
+                    
+                }
+                
+    }
+
+        
+        
+
+
+    function print_info() {
+        if (acr.value == "" || acr.value == null || mea.value == "" || mea.value == null) {
+            alert("You have to fill all fields");
+        }else{ 
+            if(ass.checked == true) {            
+                localStorage.setItem(acr.value , mea.value + "asso");
+            }else{
+                localStorage.setItem(acr.value , mea.value + "cert");
+            }
+        }
+
+        cont.innerHTML = "";
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let span = document.createElement("span");
+            let b = document.createElement("b");
+                key = localStorage.key(i);
+            let meaning = localStorage.getItem(key)
+
+                span.className = meaning.substr(-4);
+                b.innerText =  key + ": ";
+
+                span.appendChild(b);
+                span.innerHTML += meaning.slice(0,-4);
+
+                if (span.className == "asso" ) {
+                    cont.appendChild(span);
+                    cont.innerHTML += "<br>";
+                }else{
+                    cont_2.appendChild(span);
+                    cont_2.innerHTML += "<br>";
+                }
+        }
+    }
+
+    
+</script>
+</html>

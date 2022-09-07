@@ -1,0 +1,21 @@
+
+
+/* Styles for healthcare-glosary.html file */
+
+input, label{margin: 4px;}
+
+b{ text-transform: uppercase;}
+
+span{line-height: 1.5; text-transform: capitalize;}
+
+#header {position: sticky; top: 0; background: white;}
+
+#acronym{font-style: capital;}
+
+#meaning {width: 70%;}
+
+.container{margin: 12px;}
+.container_{color: blueviolet;}
+
+.asso b{ color: blue;}
+.cert b{ color: brown;}
