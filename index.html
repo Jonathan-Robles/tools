@@ -101,7 +101,7 @@
             What I would like to do now is tranfer you to a senior recruiter that can discuss all
             the specifics of the job we have available. If we get disconnected,
             its name is... and the phone number ... </p>
-        <p>I also like to confirm your email address is <input type="text" id="name_1"> <br>
+        <p>I also like to confirm your email address is <input type="text" id="email_1"> <br>
             I am going to send you and email to follow up on our conversation,
             so you have my contact information as well. </p>
     </div>
@@ -123,6 +123,7 @@
 
     <p>Experience: <span id="experience_2"></span></p>
     <p>Ages Seen: <span id="ages_2"></span></p>
+    <p>Email: <span id="email_2"></span></p>
     
     <p>Contact best time: <span id="association_2"></span></p>
     <p>Start Availability: <span id="association_2"></span></p>
@@ -151,6 +152,8 @@ function index(id_1, id_2){
 function click_it(){
     document.getElementById("name_2").innerHTML = document.getElementById("name_1").value;
     document.getElementById("id_2").innerHTML = document.getElementById("id_1").value;
+    document.getElementById("email_2").innerHTML = document.getElementById("email_1").value;
+    
     
     index("license_1", "position_2") // to get position name
     index("location_1", "location_2")
