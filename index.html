@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  
+
+
     <a href="pages\glosary-healthcare.html" target="_blank">Healthcare Glosary</a>
     <div>
         <p>My name is Jonathan and I am calling from LSGS. <b> (321) 517 5014</b> <br>
@@ -24,9 +27,7 @@
         </p>
         <p>What I would like to do is share some details about position such as basic requirements and duties. </p>
         
-<div class="container">
-    Name <input type="text" id="name_1"> Id: <input type="text" id="id_1">
-</div>
+
         <ul>
             <li>First aid and triage</li>
             <li>Secundary medical evaluation</li>
@@ -35,9 +36,22 @@
             <li>low acuity treatment</li>
         </ul>
 
+
         <p>Work requires walking, standing, bending and some lifting (for example to assist patients with wheelchairs) </p>
        
+        <div id="contactCard">
+            <input type="text" id="fname" placeholder="Fullname">
+            <input type="text" id="id" placeholder="Salesforce ID">
+            <input type="text" id="contact" placeholder="Contact Number">
+            <input type="text" id="alternate" placeholder="Alternate Number">
+            <input type="text" id="email" placeholder="Email">      
+            
+            <div id="dropAll"></div>
+        </div>
+        
+
         <div class="container">
+            
             <fieldset id="location_1">
                 <legend>Location</legend>
                 TX <input type="checkbox" value="TX" name="tx">
@@ -45,6 +59,8 @@
                 AZ <input type="checkbox" value="AZ" name="az">
                 CA <input type="checkbox" value="CA" name="ca">
             </fieldset>
+            <div id="drop4"></div>
+
             <fieldset id="license_1">
                 <legend>Act_licenses</legend>
                 EMT <input type="checkbox" value="EMT" name="ent">
@@ -55,6 +71,8 @@
                 _NP_ <input type="checkbox" value="NP" name="np">
                 
             </fieldset>
+            
+
             <fieldset id="certification_1">
                 <legend>Certifications </legend>
                 *BLS <input type="checkbox" value="BLS">
@@ -104,72 +122,35 @@
             What I would like to do now is tranfer you to a senior recruiter that can discuss all
             the specifics of the job we have available. If we get disconnected,
             its name is... and the phone number ... </p>
-        <p>I also like to confirm your email address is <input type="text" id="email_1"> <br>
+        <p>I also like to confirm your email address is
             I am going to send you and email to follow up on our conversation,
             so you have my contact information as well. </p>
     </div>
 
 
-    <button onclick="click_it()">click It</button>
-
-    <p>Name: <span id="name_2"></span></p>
-    <p>Salesforce id: <span id="id_2"></span></p>
-    <p>Position: <span id="position_2"></span></p>
-
-    <p>Location Interested In: <span id="location_2"></span> <span id="shift_2"></span> </p>
+    <button onclick="getContactInfo(); click_it() ">click It</button>
     
-    <p>Certifications: <span id="certification_2"></span></p>
-    <p>Association: <span id="association_2"></span></p>
-    <p>License: <span id="license_2"></span></p>
+    <p id="info_box"></p>
+    <p id="info_box_2"></p>
+
+    <div>Position: <span id="position_2"></span></div>
+
+    <div>Location Interested In: <span id="location_2"></span> 
+        <span id="shift_2"></span> </div>
     
-    <p>Bilingual: <span id="bilingual_2"></span></p>
-
-    <p>Experience: <span id="experience_2"></span></p>
-    <p>Ages Seen: <span id="ages_2"></span></p>
-    <p>Email: <span id="email_2"></span></p>
+    <div>Certifications: <span id="certification_2"></span></div>
+    <div>Association: <span id="association_2"></span></div>
+    <div>License: <span id="license_2"></span></div>
     
-    <p>Contact best time: <span id="association_2"></span></p>
-    <p>Start Availability: <span id="association_2"></span></p>
+    <div>Bilingual: <span id="bilingual_2"></span></div>
 
-
-
-
+    <div>Experience: <span id="experience_2"></span></div>
+    <div>Ages Seen: <span id="ages_2"></span></div>
+    <div>Email: <span id="email_2"></span></div>
+    
+    <div>Contact best time: <span id="association_2"></span></div>
+    <div>Start Availability: <span id="association_2"></span></div>
 </body>
 
-<script>
-
-function index(id_1, id_2){
-    let x = document.getElementById(id_1);
-        x = x.getElementsByTagName("input");
-    var demo = document.getElementById(id_2);
-        demo.innerHTML ="";
-
-    for (let i = 0; i < x.length; i++) {
-        if (x[i].checked == true) {
-            demo.innerHTML += x[i].value + ", ";
-        }
-    }
-}
-
-
-function click_it(){
-    document.getElementById("name_2").innerHTML = document.getElementById("name_1").value;
-    document.getElementById("id_2").innerHTML = document.getElementById("id_1").value;
-    document.getElementById("email_2").innerHTML = document.getElementById("email_1").value;
-    
-    
-    index("license_1", "position_2") // to get position name
-    index("location_1", "location_2")
-    index("shift_1", "shift_2")
-    index("certification_1", "certification_2")
-    index("association_1", "association_2")
-    index("license_1", "license_2")
-    index("bilingual_1", "bilingual_2")
-    index("experience_1", "experience_2")
-    index("ages_1", "ages_2")
-    
-}
-</script>
-<!-- <script src="index.js"></script> -->
-
+<script src="scripts/script.js"></script>
 </html>
